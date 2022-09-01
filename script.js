@@ -15,6 +15,15 @@ function handleOnClick() {
     hours.innerHTML = "";
   
     let now = new Date();
+    
+    let hr = document.getElementById("hr").value;
+    let min = document.getElementById("min").value;
+    let ampm = document.getElementById("ampm").value;
+    now.setHours(hr);
+    now.setMinutes(min);
+    if (ampm === "PM") {
+      now.setHours(now.getHours() + 12);
+    }
     // allow 14 minutes to fall sleep!
     now.setMinutes(now.getMinutes() + 14);
   
