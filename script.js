@@ -16,14 +16,20 @@ function handleOnClick() {
   
     let now = new Date();
     
-    let hr = document.getElementById("hr").value;
-    let min = document.getElementById("min").value;
+    let hr = Number.parseInt(document.getElementById("hr").value);
+    let min = Number.parseInt(document.getElementById("min").value);
     let ampm = document.getElementById("ampm").value;
+    // let x = document.getElementById("hr");
+    // console.log({x});
+    // console.log("hello");
+
+    hr = ampm === "PM" ? hr + 12 : hr;
     now.setHours(hr);
     now.setMinutes(min);
-    if (ampm === "PM") {
-      now.setHours(now.getHours() + 12);
-    }
+    
+    // if (ampm === "PM") {
+    //   now.setHours(now.getHours() + 12);
+    // }
     // allow 14 minutes to fall sleep!
     now.setMinutes(now.getMinutes() + 14);
   
